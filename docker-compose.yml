@@ -1,0 +1,11 @@
+services:
+  vuetify-test:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.nuxt
+    ports:
+      - "3333:3333"
