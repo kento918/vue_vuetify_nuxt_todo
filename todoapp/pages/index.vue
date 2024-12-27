@@ -7,7 +7,7 @@
          <button @click="addTodo">add todo</button>
       </div>
       <li v-for="item in todoList" :key="item.id">
-         <NuxtLink :to="'/${item.id}'" :todo="item">
+         <NuxtLink :to="`/${item.id}`" :todo="item">
             <
             {{ item.id }} : {{ item.text }}
 
