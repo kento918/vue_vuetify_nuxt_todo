@@ -1,7 +1,5 @@
 <template>
-   <v-col>
       hello world
-   </v-col>
       <div>
          <input v-model="newTodoText" type="text" @keydown.enter="addTodo">
          <button @click="addTodo">add todo</button>
@@ -16,6 +14,7 @@
 </template>
 
 <script setup>
+
    const todoList = ref([])
    const id = ref(1)
    const newTodoText = ref('')

@@ -1,3 +1,4 @@
 <template>
    def
+   <NuxtPage />
 </template>
