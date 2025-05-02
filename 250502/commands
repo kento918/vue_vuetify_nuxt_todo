@@ -1,0 +1,20 @@
+ユーザーの作成
+CREATE USER 'replica_user'@'%' IDENTIFIED WITH mysql_native_password BY 'replica_pass';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+FLUSH PRIVILEGES;
+
+マスター側の設定を確認
+SHOW MASTER STATUS;
+
+スレーブ側の設定
+CHANGE MASTER TO
+  MASTER_HOST='mysql-master',
+  MASTER_USER='replica_user',
+  MASTER_PASSWORD='replica_pass',
+  MASTER_LOG_FILE='binlog.000003',
+  MASTER_LOG_POS=552;
+
+START SLAVE;
+
+
+SHOW SLAVE STATUS\G
